@@ -5,10 +5,13 @@ public class Item {
     private int id;
     private String name;
     private double price;
-    private int quantity; // Do we want to hold quantity in item?
+    private int quantity;
 
     public Item(int id, String name, double price, int quantity) {
-
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.quantity = quantity;
     }
 
     public int getItemId() {
@@ -33,6 +36,14 @@ public class Item {
 
     public void setItemPrice(double price) {
         this.price = price;
+    }
+
+    public int getItemQuantity() {
+        return quantity;
+    }
+
+    public void setItemQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
 }
