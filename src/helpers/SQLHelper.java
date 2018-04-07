@@ -5,24 +5,25 @@ import models.User;
 
 public class SQLHelper {
 
-    private final static String HOSTNAME = "codd.cs.gsu.edu";
-    private final static String PORT = "3306";
-    private final static String USER = "skim161";
-    private final static String PWD = "skim161";
-    private final static String DBNAME = "skim161";
+    private final static String HOSTNAME = "localhost";
+    private final static String PORT = "8889";
+    private final static String USER = "root";
+    private final static String PWD = "root";
+    private final static String DATABASE_NAME = "panthercart";
 
     private Connection conn;
 
     public SQLHelper() {
         try {
-            String URL = "jdbc:mysql://" + HOSTNAME + ":" + PORT + "/" + DBNAME;
+            Class.forName("com.mysql.jdbc.Driver");
+            String URL = "jdbc:mysql://" + HOSTNAME + ":" + PORT + "/" + DATABASE_NAME;
             this.conn = DriverManager.getConnection(URL, USER, PWD);
-        } catch(SQLException e) {
+        } catch(Exception e) {
             e.printStackTrace();
         }
     }
 
-    private void closeConnection() {
+    public void closeConnection() {
         try {
             conn.close();
         } catch(SQLException e) {
@@ -31,17 +32,16 @@ public class SQLHelper {
     }
 
     public boolean authUser(String username, String password) {
+        boolean authenticated = false;
         try {
             Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM users WHERE username="+ username + " AND password=" + password);
-            while(rs.next()) {
-                System.out.println(rs.getInt(0));
-                closeConnection();
-            }
+            String query = "SELECT * FROM users WHERE username=\'"+ username + "\' AND password=\'" + password + "\'";
+            ResultSet rs = stmt.executeQuery(query);
+            authenticated = rs.next();
         } catch(SQLException e) {
             e.printStackTrace();
         }
-        return false;
+        return authenticated;
     }
 
     public User getUserById(int id) {
@@ -50,7 +50,6 @@ public class SQLHelper {
             ResultSet rs = stmt.executeQuery("SELECT * FROM users WHERE id=" + id);
             while(rs.next()) {
                 System.out.println(rs.getInt(0));
-                closeConnection();
             }
         } catch(SQLException e) {
             e.printStackTrace();

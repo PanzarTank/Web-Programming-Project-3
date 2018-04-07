@@ -1,5 +1,6 @@
 package controllers;
 
+import helpers.SQLHelper;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,7 +13,11 @@ import java.io.PrintWriter;
 public class test extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        SQLHelper sql = new SQLHelper();
         PrintWriter out = response.getWriter();
         out.println("test");
+        out.println(sql.authUser("jay", "kim"));
+        out.println(sql.authUser("test", "test"));
+        sql.closeConnection();
     }
 }
