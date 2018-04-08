@@ -1,3 +1,15 @@
+    <%@page import="java.sql.ResultSet"%>
+    <%@page import="java.sql.Statement"%>
+    <%@page import="java.sql.Connection"%>
+    <%@page import="java.sql.*"%>
+    
+     
+    <%
+        Connection connection = null;
+        Statement statement = null;
+        ResultSet resultSet = null;
+    %>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +20,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Paul Vlahos / pvlahos1</title>
+    <title>Project 3</title>
 
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
