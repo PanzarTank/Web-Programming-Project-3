@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Paul Vlahos / pvlahos1</title>
+    <title>PantherCart</title>
 
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
@@ -20,6 +20,7 @@
 
     <!-- Custom Scripts -->
     <script type="text/javascript" src="js/PriceCalc.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
 
     <!-- Popper JS -->
     <script src="https://unpkg.com/popper.js"></script>
@@ -105,23 +106,23 @@
                             <!-- REGISTER SERVLET ACTION IN THIS FORM -->
                             <form class="form" role="form" method="post" action="" accept-charset="UTF-8" id="register-nav">
                                 <div class="form-group">
-                                    <label class="sr-only" for="exampleInputName2">First Name</label>
-                                    <input type="text" name="signupName" class="form-control" placeholder="First Name" required>
+                                    <label class="sr-only">First Name</label>
+                                    <input type="text" id="signupFirstName" class="form-control" placeholder="First Name" required>
                                 </div>
                                 <div class="form-group">
-                                    <label class="sr-only" for="exampleInputLastName2">Last Name</label>
-                                    <input type="text" name="signupName" class="form-control" placeholder="Last Name" required>
+                                    <label class="sr-only">Last Name</label>
+                                    <input type="text" id="signupLastName" class="form-control" placeholder="Last Name" required>
                                 </div>
                                 <div class="form-group">
-                                    <label class="sr-only" for="exampleInputUserName2">Username</label>
-                                    <input type="email" name="signupEmail" class="form-control" placeholder="Username" required>
+                                    <label class="sr-only">Username</label>
+                                    <input type="email" id="signupUsername" class="form-control" placeholder="Username" required>
                                 </div>
                                 <div class="form-group">
-                                    <label class="sr-only" for="exampleInputPassword2">Password</label>
-                                    <input type="password" name="signupPassword" class="form-control" placeholder="Password" required>
+                                    <label class="sr-only">Password</label>
+                                    <input type="password" id="signupPassword" class="form-control" placeholder="Password" required>
                                 </div>
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-success btn-outline btn-block" value="Signup">
+                                    <button type="submit" onclick="register()" class="btn btn-success btn-outline btn-block" value="Signup">
                                         <i class="fas fa-check"></i> Register </button>
                                 </div>
                             </form>
