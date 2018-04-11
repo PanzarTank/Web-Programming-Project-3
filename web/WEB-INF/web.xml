@@ -5,12 +5,23 @@
          version="4.0">
 
     <servlet>
-        <servlet-name>test</servlet-name>
-        <servlet-class>controllers.test</servlet-class>
+        <servlet-name>authUser</servlet-name>
+        <servlet-class>controllers.authUser</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>test</servlet-name>
-        <url-pattern>/test</url-pattern>
+        <servlet-name>authUser</servlet-name>
+        <url-pattern>/authUser</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>registerUser</servlet-name>
+        <servlet-class>controllers.registerUser</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>registerUser</servlet-name>
+        <url-pattern>/registerUser</url-pattern>
+    </servlet-mapping>
+
 </web-app>
