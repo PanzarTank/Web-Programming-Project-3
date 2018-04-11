@@ -57,4 +57,14 @@ public class SQLHelper {
         return new User(0, "test", "test", "test", "Test", "test");
     }
 
+    public void registerUser(User user) {
+        try {
+            Statement stmt = conn.createStatement();
+            String query = "INSERT INTO users(username, password, firstName, lastName, userType) VALUES('" + user.getUserUsername() + "', '" + user.getUserPassword() + "', '" + user.getUserFirstName() + "', '" + user.getUserLastName() + "', '" + user.getUserType() + "')";
+            int result = stmt.executeUpdate(query);
+        } catch(SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
