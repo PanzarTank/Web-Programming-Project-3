@@ -31,4 +31,13 @@
         <url-pattern>/getItems</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>addItem</servlet-name>
+        <servlet-class>controllers.addItem</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addItem</servlet-name>
+        <url-pattern>/addItem</url-pattern>
+    </servlet-mapping>
+
 </web-app>

@@ -38,8 +38,11 @@ public class SQLHelper {
         boolean authenticated = false;
         try {
             Statement stmt = conn.createStatement();
-            String query = "SELECT * FROM users WHERE username=\'"+ username + "\' AND password=\'" + password + "\'";
+            String query = "SELECT userType FROM users WHERE username=\'"+ username + "\' AND password=\'" + password + "\'";
             ResultSet rs = stmt.executeQuery(query);
+            while(rs.next()) {
+                System.out.println(rs.getString(1));
+            }
             authenticated = rs.next();
         } catch(SQLException e) {
             e.printStackTrace();
@@ -87,6 +90,16 @@ public class SQLHelper {
             e.printStackTrace();
         }
         return items;
+    }
+
+    public void addItem(Item item) {
+        try {
+            Statement stmt = conn.createStatement();
+            String query = "INSERT INTO items(name, price, quantity) VALUES('" + item.getItemName() + "', '" + item.getItemPrice() + "', '" + item.getItemQuantity() + "')";
+            int result = stmt.executeUpdate(query);
+        } catch(SQLException e) {
+            e.printStackTrace();
+        }
     }
 
 }
