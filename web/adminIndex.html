@@ -21,6 +21,7 @@
     <!-- Custom Scripts -->
     <script type="text/javascript" src="js/PriceCalc.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/cart.js"></script>
 
     <!-- Popper JS -->
     <script src="https://unpkg.com/popper.js"></script>
@@ -55,8 +56,10 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">PantherCart</a>
+            <a class="navbar-brand" href="#">PantherCart (Admin)</a>
             <i id="shopButton" data-toggle="modal" data-target="#cartModal" class="fas fa-shopping-cart fa-2x shopButton"></i>
+            &nbsp;&nbsp;&nbsp;
+            <i class="far fa-clipboard fa-2x shopButton" data-toggle="modal" data-target="#orderModal"></i>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
                 aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -182,6 +185,39 @@
             </div>
         </div>
     </div>
+
+    <!-- Orders Modal -->
+    <div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Your Orders</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <ul class="list-group">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Total apple orders
+                                <span class="badge badge-primary badge-pill">14</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Total orange orders
+                                <span class="badge badge-primary badge-pill">5</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Total grape orders
+                                <span class="badge badge-primary badge-pill">1</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <!-- Page Content -->
     <div class="container">

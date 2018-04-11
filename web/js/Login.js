@@ -11,7 +11,7 @@ function login() {
     if ((res == true) && (userChecked == true)) {
         window.location.href("index.html");
     } else if ((res == true) && (adminChecked == true)) {
-        window.location.href("index.html"); //Admin page??
+        window.location.href("adminIndex.html");
     } else {
         return false;
         alert("Either Username or Password is incorrect!")
