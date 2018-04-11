@@ -8,7 +8,6 @@
         <servlet-name>authUser</servlet-name>
         <servlet-class>controllers.authUser</servlet-class>
     </servlet>
-
     <servlet-mapping>
         <servlet-name>authUser</servlet-name>
         <url-pattern>/authUser</url-pattern>
@@ -18,10 +17,18 @@
         <servlet-name>registerUser</servlet-name>
         <servlet-class>controllers.registerUser</servlet-class>
     </servlet>
-
     <servlet-mapping>
         <servlet-name>registerUser</servlet-name>
         <url-pattern>/registerUser</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>getItems</servlet-name>
+        <servlet-class>controllers.getItems</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>getItems</servlet-name>
+        <url-pattern>/getItems</url-pattern>
     </servlet-mapping>
 
 </web-app>

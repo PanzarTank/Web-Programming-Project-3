@@ -1,6 +1,9 @@
 package helpers;
 
 import java.sql.*;
+import java.util.ArrayList;
+
+import models.Item;
 import models.User;
 
 public class SQLHelper {
@@ -49,7 +52,7 @@ public class SQLHelper {
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM users WHERE id=" + id);
             while(rs.next()) {
-                System.out.println(rs.getInt(0));
+                System.out.println(rs.getInt(1));
             }
         } catch(SQLException e) {
             e.printStackTrace();
@@ -65,6 +68,25 @@ public class SQLHelper {
         } catch(SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    public ArrayList<Item> getItems() {
+        ArrayList<Item> items =  new ArrayList<Item>();
+        try {
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM items");
+            while(rs.next()) {
+                int itemId = rs.getInt(1);
+                String itemName = rs.getString(2);
+                double itemPrice = rs.getDouble(3);
+                int itemQuantity = rs.getInt(4);
+                Item item = new Item(itemId, itemName, itemPrice, itemQuantity);
+                items.add(item);
+            }
+        } catch(SQLException e) {
+            e.printStackTrace();
+        }
+        return items;
     }
 
 }
